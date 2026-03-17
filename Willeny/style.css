@@ -1,0 +1,175 @@
+/* ================= VARIÁVEIS DE CORES ================= */
+/* Inspiradas nos 3 filmes da saga */
+
+:root {
+    --verde-labirinto: #1b3d1b;     /* Correr ou Morrer */
+    --laranja-fogo: #cc5a00;       /* Prova de Fogo */
+    --azul-cura: #0f3057;          /* A Cura Mortal */
+    --cinza-urbano: #1c1c1c;
+    --branco: #ffffff;
+    --preto: #000000;
+}
+
+/* ================= ESTILO GLOBAL ================= */
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(
+        to bottom,
+        var(--verde-labirinto),
+        var(--laranja-fogo),
+        var(--azul-cura)
+    );
+    color: var(--branco);
+}
+
+/* ================= TÍTULO ================= */
+
+header {
+    text-align: center;
+    padding: 25px;
+}
+
+header h1 {
+    color: var(--preto);
+    font-size: 32px;
+}
+
+/* ================= BANNER ================= */
+
+.banner {
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    position: relative;
+    border-top: 4px solid var(--laranja-fogo);
+    border-bottom: 4px solid var(--azul-cura);
+}
+
+.slide {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide.active {
+    display: block;
+}
+
+.caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(0,0,0,0.7);
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* ================= CARDS ================= */
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: linear-gradient(
+        135deg,
+        var(--verde-labirinto),
+        var(--azul-cura)
+    );
+    border: 2px solid var(--laranja-fogo);
+    border-radius: 12px;
+    padding: 15px;
+    margin: 15px;
+    width: 300px;
+    text-align: center;
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--laranja-fogo);
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+}
+
+/* ================= TABELA ================= */
+
+.tabela {
+    padding: 30px;
+    text-align: center;
+}
+
+table {
+    margin: auto;
+    border-collapse: collapse;
+    width: 90%;
+    background-color: var(--cinza-urbano);
+}
+
+th {
+    background-color: var(--laranja-fogo);
+    color: var(--branco);
+}
+
+th, td {
+    border: 1px solid var(--branco);
+    padding: 12px;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(255,255,255,0.05);
+}
+
+/* ================= LINK ================= */
+
+.link-externo {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: var(--azul-cura);
+    color: var(--branco);
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.link-externo:hover {
+    background-color: var(--laranja-fogo);
+}
+
+/* ================= RODAPÉ ================= */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--cinza-urbano);
+    border-top: 3px solid var(--laranja-fogo);
+}
+
+/* ================= RESPONSIVIDADE ================= */
+
+@media (max-width: 768px) {
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
